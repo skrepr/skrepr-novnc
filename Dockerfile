@@ -9,4 +9,4 @@ RUN apt-get update && apt-get install git python3 procps -y
 
 ENTRYPOINT ["start-up"]
 
-CMD ["bash", "-c", "/app/utils/novnc_proxy --ssl-only --key /etc/ssl/key.pem --cert /etc/ssl/domain.pem --listen localhost:${LISTEN_PORT} --vnc ${VNC_HOST}:${VNC_PORT}"]
+CMD ["bash", "-c", "/app/utils/novnc_proxy --ssl-only --key /etc/ssl/key.pem --cert /etc/ssl/domain.pem --listen 0.0.0.0:${LISTEN_PORT} --vnc ${VNC_HOST}:${VNC_PORT}"]
