@@ -1,0 +1,7 @@
+#!/bin/bash
+set -eu
+echo "► Starting Main Entrypoint..."
+
+openssl req -config myconfig.conf -newkey rsa:3072 -sha512 -days 365 -out /etc/ssl/domain.pem -keyout /etc/ssl/key.pem
+
+exec "${@}"
