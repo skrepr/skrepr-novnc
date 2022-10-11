@@ -1,4 +1,4 @@
-FROM debian:buster-slim
+FROM debian:buster-slim as novnc
 
 WORKDIR /app
 COPY . /app
